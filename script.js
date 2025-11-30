@@ -1,3 +1,4 @@
+//animasi tag
 function initTagAnimation() {
     const tagList = document.querySelector('.tag ul');
     
@@ -20,14 +21,17 @@ function initTagAnimation() {
     }
 }
 
+//scroll halus
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             
+            //ambil target id
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
+            //cari elemen target
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -39,6 +43,7 @@ function initSmoothScroll() {
     });
 }
 
+//form
 function initFormHandler() {
     document.getElementById('messageForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -61,6 +66,7 @@ function initFormHandler() {
     });
 }
 
+//blur navbar
 function initNavbarEffects() {
     const navbar = document.querySelector('.navbar');
     
@@ -75,6 +81,32 @@ function initNavbarEffects() {
     });
 }
 
+//cari lagu
+function searchSong() {
+    const input = document.getElementById("searchSong").value.toLowerCase();
+    const table = document.getElementById("songTable");
+    const rows = table.getElementsByTagName("tr");
+    const notFound = document.getElementById("notFound");
+
+    let found = false;
+
+    for (let i = 1; i < rows.length; i++) {
+       const titleCell = rows[i].getElementsByTagName("td")[0]; 
+        if (titleCell) {
+            const title = titleCell.textContent.toLowerCase();
+            if (title.includes(input)) {
+                rows[i].style.display = "";
+                found = true;
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+
+    notFound.style.display = found ? "none" : "block";
+}
+
+//scroll navbar bergerak
 function initActiveMenu() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
@@ -116,4 +148,5 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Blackpink Fan Site loaded successfully! 🖤💖');
 });
 
+// Jalankan ulang animasi tag saat page benar-benar selesai load
 window.addEventListener('load', initTagAnimation);
