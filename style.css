@@ -1,4 +1,4 @@
-/*GLOBAL STYLES*/
+/* ===== GLOBAL STYLES ===== */
 * {
     text-decoration: none;
     margin: 0;
@@ -8,85 +8,80 @@
 
 body {
     margin: 0;
-    padding-top: 180px;
+    padding-top: 140px; /* Mobile first */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: white;
     color: #333;
+    overflow-x: hidden;
 }
 
-/*HEADER & NAVBAR*/
-header {
-    margin: 0;
-    padding: 0;
+/* ===== HEADER & NAVBAR ===== */
+header { margin: 0; padding: 0; }
+
+.navbar { 
+    background-color: black; 
+    padding: 15px 5%; 
+    flex-wrap: wrap; 
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    width: 100%; 
+    transition: background-color 0.3s ease; 
+} 
+.navdiv { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+} 
+.logo { 
+    display: flex; 
+    align-items: center; 
+} 
+.logo a { 
+    font-size: clamp(24px, 6vw, 80px);  
+    color: pink; 
+    font-weight: bold; 
+} 
+.logo img { 
+    width: clamp(60px, 15vw, 150px); 
+    height: auto;  
+    max-height: 120px; 
+    object-fit: contain; 
+} 
+.navbar ul { 
+    display: flex; 
+    gap: clamp(10px, 2vw, 30px); 
+    flex-wrap: wrap; 
+    justify-content: center; 
+} 
+.navbar li { 
+    list-style: none; 
+} 
+.navbar li a { 
+    color: pink; 
+    font-size: clamp(14px, 3vw, 30px); 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+    white-space: nowrap; 
+} 
+.navbar li a:hover { 
+    color: white; 
+} 
+.navbar a.active { 
+    color: white !important; 
+    text-decoration: underline !important; 
 }
 
-.navbar {
-    background-color: black;
-    padding: 30px;
-    flex-wrap: wrap;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.navdiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo a {
-    font-size: 80px;
-    color: pink;
-    font-weight: bold;
-}
-
-.logo img {
-    width: 150px;
-    height: 120px;
-    object-fit: contain;
-}
-
-.navbar ul {
-    display: flex;
-    gap: 30px;
-}
-
-.navbar li {
-    list-style: none;
-}
-
-.navbar li a {
-    color: pink;
-    font-size: 30px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.navbar li a:hover {
-    color: white;
-}
-
-.navbar a.active {
-    color: white !important;
-    text-decoration: underline !important;
-}
-
-/*TAG*/
+/* ===== TAG ===== */
 .tag {
     background-color: white;
-    padding: 12px;
-    font-size: 25px;
+    padding: 0;
+    font-size: clamp(16px, 4vw, 25px);
     font-weight: bold;
     overflow: hidden;
     position: relative;
+    text-align: center;
 }
 
 .tag ul {
@@ -95,25 +90,22 @@ header {
     animation: scroll 20s linear infinite;
     padding: 0;
     margin: 0;
+    justify-content: center;
 }
 
 .tag li {
     list-style: none;
     white-space: nowrap;
-    padding: 0 40px;
+    padding: 0 clamp(20px, 5vw, 40px);
     color: black;
 }
 
 @keyframes scroll {
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        transform: translateX(-50%); 
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-/*FOTO*/
+/* ===== FOTO ===== */
 .foto {
     display: flex;
     justify-content: center;
@@ -129,15 +121,15 @@ header {
     display: block;
 }
 
-/*SECTIONS COMMON STYLES ===== */
+/* ===== SECTIONS COMMON ===== */
 section {
-    padding: 30px;
+    padding: 20px 5%;
 }
 
 h1 {
     font-weight: bold;
-    font-size: 70px;
-    margin-bottom: 40px;
+    font-size: clamp(32px, 8vw, 70px);
+    margin-bottom: 30px;
     text-align: center;
     position: relative;
 }
@@ -145,61 +137,61 @@ h1 {
 h1::after {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 8px;
+    width: 80px;
+    height: 6px;
     background: pink;
     border-radius: 2px;
 }
 
-/*ABOUT SECTION*/
+/* ===== ABOUT ===== */
 .about {
-    padding: 60px 200px;
-    font-size: 30px;
+    padding: 40px 5%;
+    font-size: clamp(16px, 4vw, 30px);
     text-align: justify;
     background-color: white;
+    line-height: 1.6;
 }
 
-/*ACHIEVEMENTS SECTION*/
+/* ===== ACHIEVEMENTS ===== */
 .achievement {
-    padding: 80px 200px;
+    padding: 50px 5%;
     background-color: #f8f8f8;
     text-align: center;
 }
 
-.achievement h1 {
-    font-size: 70px;
-    margin-bottom: 60px;
-}
+.achievement h1 { margin-bottom: 40px; }
 
 .achievement-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .achievement-card {
     background: black;
     color: pink;
-    width: 280px;
-    padding: 40px 20px;
-    border-radius: 30px;
+    width: min(280px, 90%);
+    padding: 30px 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
     transition: 0.4s ease;
     cursor: pointer;
+    flex: 1 1 100%;
+    max-width: 350px;
 }
 
-.achievement-card h2 {
-    font-size: 70px;
-    margin-bottom: 15px;
+.achievement-card h2 { 
+    font-size: clamp(40px, 10vw, 70px); 
+    margin-bottom: 10px; 
 }
 
-.achievement-card p {
-    font-size: 22px;
-    color: #ffb6d5;
+.achievement-card p { 
+    font-size: clamp(16px, 4vw, 22px); 
+    color: #ffb6d5; 
 }
 
 .achievement-card:hover {
@@ -207,121 +199,123 @@ h1::after {
     box-shadow: 0 20px 40px rgba(255, 105, 180, 0.6);
 }
 
-/*ALBUM SECTION*/
-.album {
-    padding: 60px 200px;
-    background-color: white;
+/* ===== ALBUM ===== */
+.album { 
+    padding: 40px 5%; 
+    background-color: white; 
 }
 
-.album h1 {
-    font-size: 70px;
-    margin-bottom: 40px;
+.album h1 { 
+    margin-bottom: 30px; 
 }
 
 .kotak {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .album-box {
     transition: transform 0.3s ease;
     text-align: center;
+    flex: 1 1 100%;
+    max-width: 350px;
 }
 
 .album-box img {
-    width: 350px;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 7/8;
     border-radius: 10%;
-    padding: 25px;
+    padding: 15px;
     object-fit: cover;
 }
 
 .album-box h3 {
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px);
     margin-top: 0;
     color: #333;
 }
 
-.album-box:hover {
-    transform: translateY(-10px);
+.album-box:hover { 
+    transform: translateY(-10px); 
 }
 
-/*TABEL LAGU*/
-.table { 
-    font-size: 40px;
-    padding: 60px 200px;
+/* ===== TABLE LAGU ===== */
+.table {
+    font-size: clamp(16px, 4vw, 40px);
+    padding: 40px 5%;
     background-color: #f8f8f8;
+    overflow-x: auto;
 }
 
-.table-wrapper {
-    width: 75%;
-    min-width: 1000px;
-    margin: 0 auto;
+.table-wrapper { 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
 }
 
 .table-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
     width: 100%;
-}
-.table-header h1 {
-    font-size: 70px;
-    margin: 0px 0px 40px;
-    text-align: left;
+    gap: 20px;
 }
 
-.table .content { 
-    border-collapse: collapse; 
+.table-header h1 { 
+    text-align: center; 
+    margin: 0; 
+}
+
+.table .content {
+    border-collapse: collapse;
     width: 100%;
-    max-width: 100%;
-    background-color: black; 
+    background-color: black;
     margin: 0 auto;
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    min-width: 600px;
 }
 
-.table .content th {
-    border: 1px solid pink;
-    padding: 20px 25px;
-    color: pink;
-    background-color: black;
-    text-align: left;
-    font-size: 1.2em;
-}
-
+.table .content th,
 .table .content td {
     border: 1px solid pink;
-    padding: 20px 25px;
-    color: pink;
-    background-color: rgb(66, 65, 65);
-    transition: background-color 0.3s ease;
+    padding: clamp(10px, 3vw, 20px) clamp(12px, 3vw, 25px);
+    font-size: clamp(14px, 3vw, 1em);
 }
 
-.table .content tr:hover td {
-    background-color: rgba(255, 105, 180, 0.1);
+.table .content th { 
+    color: pink; 
+    background-color: black; 
+    text-align: left; }
+
+.table .content td { 
+    color: pink; 
+    background-color: rgb(66,65,65); 
+    transition: background-color 0.3s ease; 
 }
 
-/* SEARCH WRAPPER */
+.table .content tr:hover td { 
+    background-color: rgba(255, 105, 180, 0.1); 
+}
+
+/* ===== SEARCH BOX ===== */
 .search-box {
     display: flex;
     justify-content: center;
+    width: min(400px, 90%);
+    height: auto;
     margin-bottom: 30px;
-}
-
-.search-box {
-   width: 400px;
-   height: 75px;
 }
 
 #searchSong {
     width: 100%;
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
     border-radius: 30px;
     border: 3px solid pink;
     outline: none;
@@ -335,170 +329,165 @@ h1::after {
     box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
 }
 
-#searchSong::placeholder {
-    color: pink;
-    font-weight: bold;
+#searchSong::placeholder { 
+    color: pink; 
+    font-weight: bold; 
 }
 
-/* PESAN TIDAK DITEMUKAN */
 #notFound {
     display: none;
     margin: 15px 0;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
     color: #ff4d6d;
     text-align: center;
 }
 
-/*LAGU BARU*/
+/* ===== LAGU ===== */
 .lagu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 80px 120px;
-    margin: auto;
+    gap: 30px;
+    padding: 50px 5%;
+    margin: 20px 5%;
     position: relative;
     overflow: hidden;
+    border-radius: 20px;
 }
 
-/* BACKGROUND GAMBAR + TRANSPARANSI */
 .lagu::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("jmp.png");
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("jmp.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
 }
 
-.lagu > * {
-    position: relative;
-    z-index: 1;
-}
+.lagu > * { position: relative; z-index: 1; }
 
 .lagu a {
-    font-size: 70px;
+    font-size: clamp(32px, 8vw, 70px);
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: pink;
     text-decoration: none;
+    text-align: center;
 }
 
 .lagu-layout {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     max-width: 1200px;
     width: 100%;
 }
 
-.lagu-text {
-    flex: 1;
-}
+.lagu-text { flex: 1; width: 100%; }
 
 .lagu-text p {
-    font-size: 22px;
+    font-size: clamp(16px, 4vw, 22px);
     line-height: 1.6;
     color: #fff;
-    max-width: 500px;
+    max-width: 100%;
     text-align: justify;
 }
 
 .lagu video {
     width: 100%;
     max-width: 700px;
-    aspect-ratio: 20 / 14;
+    aspect-ratio: 20/14;
     display: block;
     object-fit: cover;
     border-radius: 20px;
 }
 
-/*MESSAGE SECTION*/
+/* ===== MESSAGE ===== */
 .messege {
-    padding: 80px 140px;
+    padding: 100px 5%;
     background-color: #f8f8f8;
 }
 
 .messege-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
     justify-content: center;
 }
 
 .messege-text {
     flex: 1;
-    max-width: 520px;
+    max-width: 100%;
     text-align: center;
-    margin-top: -21px;
 }
 
-.messege-text h1 {
-    font-size: 72px;
-    margin-bottom: 20px;
+.messege-text h1 { 
+    font-size: clamp(32px, 8vw, 72px); 
+    margin-bottom: 15px; 
 }
 
-.messege-text p {
-    font-size: 26px;
-    line-height: 1.6;
-    color: #444;
-    margin-top: 40px;
+.messege-text p { 
+    font-size: clamp(18px, 4vw, 26px); 
+    line-height: 1.6; 
+    color: #444; 
+    margin-top: 20px; 
 }
 
 .pesan {
-    flex: 1.5;                  
-    max-width: 800px;            
-    padding: 50px;
+    flex: 1.5;
+    max-width: 100%;
+    padding: 30px;
     background: white;
-    border-radius: 25px;
+    border-radius: 20px;
     border: 3px solid pink;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
 }
 
-.pesan form div {
-    margin-bottom: 25px;
+.pesan form div { 
+    margin-bottom: 20px; 
 }
 
 .pesan label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: clamp(16px, 4vw, 20px);
     color: #333;
 }
 
 .pesan input,
 .pesan textarea {
     width: 100%;
-    padding: 18px;
-    font-size: 18px;
+    padding: 15px;
+    font-size: clamp(14px, 4vw, 18px);
     border: 2px solid #ddd;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: 0.3s ease;
 }
 
 .pesan input:focus,
 .pesan textarea:focus {
     border-color: hotpink;
-    box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+    box-shadow: 0 0 12px rgba(255,105,180,0.4);
     outline: none;
 }
 
-.pesan textarea {
-    height: 140px;
-    resize: vertical;
+.pesan textarea { 
+    height: 120px; 
+    resize: vertical; 
 }
 
 .pesan button {
     width: 100%;
-    padding: 20px;
-    font-size: 20px;
+    padding: 15px;
+    font-size: clamp(16px, 4vw, 20px);
     font-weight: bold;
-    border-radius: 14px;
+    border-radius: 12px;
     background: linear-gradient(45deg, #ff69b4, #ff1493);
     color: white;
     border: none;
@@ -513,27 +502,26 @@ h1::after {
 
 #messageStatus {
     display: none;
-    margin-top: 30px;
-    padding: 15px;
-    font-size: 18px;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: clamp(14px, 4vw, 18px);
     text-align: center;
     background-color: #d4edda;
     color: #155724;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-/*MEMBERS SECTION*/
+/* ===== MEMBERS ===== */
 .member {
-    font-size: 30px;
+    font-size: clamp(16px, 4vw, 30px);
     background-color: pink;
-    padding: 60px 200px;
+    padding: 20px 5%;
 }
 
 .member h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 70px;
-    padding: 0px;
+    font-size: clamp(32px, 8vw, 70px);
     margin-bottom: 30px;
     color: black;
 }
@@ -541,77 +529,80 @@ h1::after {
 .container {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .box {
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: black;
     transition: transform 0.3s ease;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    flex: 1 1 100%;
+    max-width: 300px;
 }
 
 .box img {
-    width: 300px;
-    height: 350px;
-    border-radius: 15px;
-    padding: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .box h3 {
-    font-size: 35px;
+    font-size: clamp(20px, 5vw, 35px);
     color: white;
     font-weight: bold;
-    padding: 15px;
+    padding: 10px;
     margin: 0;
 }
 
-.box a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.box a { 
+    color: white; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
 }
 
-.box a:hover {
-    color: pink;
+.box a:hover { 
+    color: pink; 
 }
 
 .box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/*FOOTER*/
+/* ===== FOOTER ===== */
 .footer {
-    padding: 50px;
+    padding: 30px 5%;
     background-color: black;
     text-align: center;
 }
 
 .footer p {
     color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: clamp(14px, 4vw, 20px);
+    margin-bottom: 15px;
 }
 
 .social {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .social img {
-    width: 40px;              
-    height: 40px;
-    border-radius: 50%;       
+    width: clamp(30px, 8vw, 40px);
+    height: clamp(30px, 8vw, 40px);
+    border-radius: 50%;
     object-fit: cover;
-    background-color: white;  
-    padding: 6px;             
+    background-color: white;
+    padding: 6px;
     transition: all 0.3s ease;
     filter: brightness(0.9);
 }
@@ -619,343 +610,37 @@ h1::after {
 .social img:hover {
     transform: scale(1.15);
     filter: brightness(1);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+    box-shadow: 0 0 15px rgba(255,105,180,0.6);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1600px) {
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .lagu,
-    .messege,
-    .member {
-        padding: 60px 150px;
-    }
-    
-    .lagu {
-        margin: 40px 150px;
-    }
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 767px) {
+    .navbar ul { flex-direction: column; align-items: center; gap: 15px; }
+    .lagu-layout, .messege-wrapper, .table-header { flex-direction: column; align-items: center; }
+    .table .content { min-width: 100%; }
+    .album-box, .achievement-card, .box { flex: 1 1 90%; }
+    h1::after { width: 60px; }
+    .lagu::before { background-attachment: scroll; }
 }
 
-@media (max-width: 1400px) {
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .lagu,
-    .messege,
-    .member {
-        padding: 60px 100px;
-    }
-    
-    .lagu {
-        margin: 40px 100px;
-    }
+@media (min-width: 768px) {
+    body { padding-top: 160px; }
+    .navbar { padding: 20px 5%; }
+    .navdiv, .table-header, .lagu-layout, .messege-wrapper { flex-direction: row; }
+    .table-header h1 { text-align: left; }
 }
 
-@media (max-width: 1200px) {
-    .container {
-        gap: 80px;
-    }
-    
-    .kotak {
-        gap: 70px;
-    }
-    
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .lagu,
-    .messege,
-    .member {
-        padding: 60px 80px;
-    }
-    
-    .lagu {
-        margin: 40px 80px;
-    }
+@media (min-width: 992px) {
+    body { padding-top: 180px; }
+    section { padding: 40px 8%; }
+    .about, .achievement, .album, .table, .member { padding: 60px 8%; }
+    .lagu { padding: 60px 8%; margin: 40px 8%; }
+    .messege { padding: 60px 8%; }
 }
 
-@media (max-width: 992px) {
-    body {
-        padding-top: 160px;
-    }
-    
-    .navbar {
-        padding: 20px;
-    }
-    
-    .logo a {
-        font-size: 60px;
-    }
-    
-    .logo img {
-        width: 120px;
-        height: 100px;
-    }
-    
-    .navbar li a {
-        font-size: 24px;
-    }
-    
-    h1 {
-        font-size: 50px;
-    }
-    
-    .container {
-        gap: 60px;
-    }
-    
-    .kotak {
-        gap: 50px;
-    }
-    
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .lagu,
-    .messege,
-    .member {
-        padding: 50px 60px;
-    }
-    
-    .lagu {
-        margin: 30px 60px;
-    }
-    
-    .lagu h1 {
-        font-size: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 140px;
-    }
-    
-    .navdiv {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .logo a {
-        font-size: 40px;
-    }
-    
-    .navbar ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .navbar li a {
-        font-size: 18px;
-    }
-    
-    section {
-        padding: 20px;
-    }
-    
-    h1 {
-        font-size: 40px;
-    }
-    
-    .about,
-    .pencapaian {
-        font-size: 20px;
-    }
-    
-    .pencapaian ul {
-        padding: 20px;
-    }
-    
-    .container,
-    .kotak {
-        gap: 30px;
-    }
-    
-    .box img,
-    .album-box img {
-        width: 250px;
-        height: 300px;
-        padding: 15px;
-    }
-    
-    .box h3 {
-        font-size: 30px;
-        padding: 15px;
-    }
-    
-    .album-box h3 {
-        font-size: 24px;
-    }
-    
-    .lagu {
-        margin: 20px;
-        padding: 40px 30px;
-    }
-    
-    .lagu h1 {
-        font-size: 50px;
-    }
-    
-    .table {
-        font-size: 24px;
-    }
-    
-    .table h1 {
-        font-size: 40px;
-    }
-    
-    .pesan {
-        padding: 30px;
-        font-size: 18px;
-        max-width: 90%;
-    }
-    
-    .pesan label {
-        font-size: 16px;
-    }
-    
-    .pesan input,
-    .pesan textarea {
-        padding: 12px;
-        font-size: 14px;
-    }
-    
-    .pesan button {
-        padding: 15px 25px;
-        font-size: 16px;
-    }
-    
-    .social img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .messege,
-    .member {
-        padding: 40px 30px;
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        padding-top: 120px;
-    }
-    
-    .navbar {
-        padding: 15px;
-    }
-    
-    .logo a {
-        font-size: 32px;
-    }
-    
-    .logo img {
-        width: 80px;
-        height: 60px;
-    }
-    
-    .navbar li a {
-        font-size: 16px;
-    }
-    
-    .tag {
-        font-size: 18px;
-    }
-    
-    .tag li {
-        padding: 0 20px;
-    }
-    
-    section {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 32px;
-    }
-    
-    .about,
-    .pencapaian {
-        font-size: 18px;
-    }
-    
-    .container,
-    .kotak {
-        gap: 20px;
-    }
-    
-    .box img,
-    .album-box img {
-        width: 200px;
-        height: 250px;
-        padding: 10px;
-    }
-    
-    .box h3 {
-        font-size: 24px;
-        padding: 10px;
-    }
-    
-    .lagu {
-        margin: 15px;
-        padding: 30px 20px;
-    }
-    
-    .lagu h1 {
-        font-size: 40px;
-    }
-    
-    .table {
-        font-size: 18px;
-    }
-    
-    .table h1 {
-        font-size: 32px;
-    }
-    
-    .table .content th,
-    .table .content td {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-    
-    .pesan {
-        padding: 20px;
-        font-size: 16px;
-    }
-    
-    .pesan label {
-        font-size: 14px;
-    }
-    
-    .pesan input,
-    .pesan textarea {
-        padding: 10px;
-        font-size: 14px;
-    }
-    
-    .pesan button {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-    
-    .about,
-    .pencapaian,
-    .album,
-    .table,
-    .messege,
-    .member {
-        padding: 30px 20px;
-    }
+@media (min-width: 1200px) {
+    section { padding: 50px 10%; }
+    .about, .achievement, .album, .table, .member { padding: 80px 10%; }
+    .lagu { padding: 80px 10%; margin: 60px 10%; }
+    .messege { padding: 80px 10%; }
 }
