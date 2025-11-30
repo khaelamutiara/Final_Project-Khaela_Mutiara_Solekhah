@@ -17,16 +17,17 @@
             </div>
             <ul>
                 <li><a href="#home">HOME</a></li>
-                <li><a href="#songs">SONGS</a></li>
                 <li><a href="#albums">ALBUMS</a></li>
-                <li><a href="#message">FANS MESSAGE</a></li>
+                <li><a href="#songs">SONGS</a></li>
                 <li><a href="#members">MEMBERS</a></li>
+                <li><a href="#message">FANS MESSAGE</a></li>
             </ul> 
         </div>
     </nav>
     </header>
 
     <main>
+        <!-- TAG LIST -->
         <section class="tag">
             <ul>
                 <li>BLINK</li>
@@ -40,10 +41,13 @@
                 <li>BLINK</li>
             </ul>
         </section>
+        
+        <!-- FOTO -->
         <section class="foto">
             <img src="https://shop.blackpinkmusic.com/cdn/shop/files/BLKPNK-0043_EvergreenStoreRefreshHero-Banner.png?v=1696914434&width=2000" alt="Foto grup Blackpink - Jisoo, Jennie, Rosé, dan Lisa">
         </section>
 
+        <!-- ABOUT -->
         <section class="about" id="about">
             <h1>BLACKPINK</h1>
             <p>
@@ -61,17 +65,35 @@
             </p>
         </section>
 
-        <section class="pencapaian">
-            <h2>Pencapaian:</h2>
-            <ul>
-                <li>Menjadi girl group K-Pop pertama yang tampil di Coachella (2019)</li>
-                <li>Video musik Ddu-Du Ddu-Du mencapai 2 miliar penayangan di YouTube</li>
-                <li>Album The Album masuk Top 2 Billboard 200</li>
-                <li>Menjadi grup wanita pertama dengan 100 juta subscriber di YouTube</li>
-                <li>Setiap anggota memiliki karier solo yang sukses</li>
-            </ul>
+        <!-- Pencapaian -->
+        <section class="achievement" id="achievement">
+            <h1>Pencapaian</h1>
+
+            <div class="achievement-container">
+                <div class="achievement-card">
+                    <h2>25</h2>
+                    <p>Awards</p>
+                </div>
+
+                <div class="achievement-card">
+                    <h2>50+</h2>
+                    <p>Music Show</p>
+                </div>
+
+                <div class="achievement-card">
+                    <h2>1B+</h2>
+                    <p>YouTube Views</p>
+                </div>
+
+                <div class="achievement-card">
+                    <h2>4</h2>
+                    <p>World Tour</p>
+                </div>
+            </div>
         </section>
 
+
+        <!-- ALBUM -->
         <section class="album" id="albums">
             <h1>Album</h1>
             <div class="kotak">
@@ -106,100 +128,122 @@
             </div>
         </section>
 
+        <!-- TABEL LAGU -->
         <section class="table" id="songs">
-            <h1>Lagu Terpopuler</h1>
-            <table class="content">
-                <thead>
-                    <tr>
-                        <th>Judul Lagu</th>
-                        <th>Tahun Rilis</th>
-                        <th>Album</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Boombayah</td>
-                        <td>2016</td>
-                        <td>Square One</td>
-                    </tr>
-                    <tr>
-                        <td>Whistle</td>
-                        <td>2016</td>
-                        <td>Square One</td>
-                    </tr>
-                    <tr>
-                        <td>Playing with Fire</td>
-                        <td>2016</td>
-                        <td>Square Two</td>
-                    </tr>
-                    <tr>
-                        <td>Stay</td>
-                        <td>2016</td>
-                        <td>Square Two</td>
-                    </tr>
-                    <tr>
-                        <td>As IF It's Your Last</td>
-                        <td>2017</td>
-                        <td>Single Digital</td>
-                    </tr>
-                    <tr>
-                        <td>Ddu-Du Ddu-Du</td>
-                        <td>2018</td>
-                        <td>Square Up</td>
-                    </tr>
-                    <tr>
-                        <td>Forever Young</td>
-                        <td>2018</td>
-                        <td>Square Up</td>
-                    </tr>
-                    <tr>
-                        <td>Kill This Love</td>
-                        <td>2019</td>
-                        <td>Kill This Love</td>
-                    </tr>
-                    <tr>
-                        <td>Don't Know What To Do</td>
-                        <td>2019</td>
-                        <td>Kill This Love</td>
-                    </tr>
-                    <tr>
-                        <td>How You Like That</td>
-                        <td>2020</td>
-                        <td>The Album</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <!-- WRAPPER AGAR SEARCH & TABEL SEJAJAR -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h1>Lagu Terpopuler</h1>
 
-        <section class="lagu">
-            <h1><a href="https://youtu.be/CgCVZdcKcqY?si=-t0oP27hXejtkHTz" target="_blank">Lagu Baru</a></h1>
-            <video controls>
-                <source src="jump.mp4" type="video/mp4">
-            </video>
-        </section>
+                <!-- SEARCH -->
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchSong"
+                        placeholder="Cari judul lagu..."
+                        onkeyup="searchSong()"
+                    >
+                </div>
+                </div>
 
-        <section class="messege" id="message">
-            <h1>Kirim Pesan</h1>
-            <div class="pesan">
-                <form id="messageForm">
-                    <div>
-                        <label for="nama">Nama:</label>
-                        <input type="text" id="nama" required>
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div>
-                        <label for="pesan">Pesan:</label>
-                        <textarea id="pesan" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Kirim</button>
-                </form>
+                <!-- PESAN JIKA TIDAK DITEMUKAN -->
+                <p id="notFound">Lagu tidak ditemukan</p>
+
+                <!-- TABEL -->
+                <table class="content" id="songTable">
+                    <thead>
+                        <tr>
+                            <th>Judul Lagu</th>
+                            <th>Tahun Rilis</th>
+                            <th>Album</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Boombayah</td>
+                            <td>2016</td>
+                            <td>Square One</td>
+                        </tr>
+                        <tr>
+                            <td>Whistle</td>
+                            <td>2016</td>
+                            <td>Square One</td>
+                        </tr>
+                        <tr>
+                            <td>Playing with Fire</td>
+                            <td>2016</td>
+                            <td>Square Two</td>
+                        </tr>
+                        <tr>
+                            <td>Stay</td>
+                            <td>2016</td>
+                            <td>Square Two</td>
+                        </tr>
+                        <tr>
+                            <td>As If It's Your Last</td>
+                            <td>2017</td>
+                            <td>Single Digital</td>
+                        </tr>
+                        <tr>
+                            <td>Ddu-Du Ddu-Du</td>
+                            <td>2018</td>
+                            <td>Square Up</td>
+                        </tr>
+                        <tr>
+                            <td>Forever Young</td>
+                            <td>2018</td>
+                            <td>Square Up</td>
+                        </tr>
+                        <tr>
+                            <td>Kill This Love</td>
+                            <td>2019</td>
+                            <td>Kill This Love</td>
+                        </tr>
+                        <tr>
+                            <td>Don't Know What To Do</td>
+                            <td>2019</td>
+                            <td>Kill This Love</td>
+                        </tr>
+                        <tr>
+                            <td>How You Like That</td>
+                            <td>2020</td>
+                            <td>The Album</td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
-            <div id="messageStatus" style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border-radius: 5px;"></div>
         </section>
 
+        <section class="lagu" id="songs">
+            <div class="lagu-container">
+                <div class="lagu-layout">
+
+                    <div class="lagu-text">
+                        <h1>
+                            <a href="https://youtu.be/CgCVZdcKcqY?si=-t0oP27hXejtkHTz" target="_blank">
+                                Lagu Baru
+                            </a>
+                        </h1>
+                        <p>
+                            Lagu "Jump" dari BLACKPINK adalah perayaan keberanian,
+                            kemandirian, dan pemberdayaan diri untuk melompat keluar
+                            dari batasan dan ekspektasi. Lagu ini mengajak pendengar
+                            untuk berani menjadi diri sendiri dan berjuang untuk mimpi mereka. Selain itu, "Jump" juga menekankan kekuatan dan solidaritas perempuan (sisterhood), di mana BLACKPINK menunjukkan bahwa mereka adalah tim yang saling mendukung, seperti dalam lirik "My girls are on the way".
+                        </p>
+                    </div>
+
+                    <div class="video-container">
+                        <video controls>
+                            <source src="jump.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Anggota -->
         <section class="member" id="members">
             <h1>Anggota</h1>
             <div class="container">
@@ -224,24 +268,62 @@
                 </article>
             </div>
         </section>
-    </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; Blackpink Fan Site. Dibuat oleh Khaela Mutiara Solekhah</p>
-            <div class="social">
-                <a href="https://www.instagram.com/blackpinkofficial/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Logo Instagram">
-                </a>
-                <a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Logo YouTube">
-                </a>
-                <a href="https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF?si=Wd16LL8uT5yjdv5w8giLLw">
-                    <img src="https://m.media-amazon.com/images/I/51rttY7a+9L._h1_.png" alt="Logo Spotify">
-                </a>
+        <!-- Pesan -->
+        <section class="messege" id="message">
+            <div class="messege-wrapper">
+
+
+                <div class="messege-text">
+                    <h1>Kirim Pesan</h1>
+                    <p>
+                        Hai Blink!! Yuk kirim pesan hangat untuk member Blackpink 🖤💗
+                    </p>
+                </div>
+
+                <div class="pesan">
+                    <form id="messageForm">
+                        <div>
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div>
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" required></textarea>
+                        </div>
+
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+
             </div>
-        </div>
-    </footer>
+
+            <div id="messageStatus"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; Blackpink Fan Site. Dibuat oleh Khaela Mutiara Solekhah</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/blackpinkofficial/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Logo Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Logo YouTube">
+                    </a>
+                    <a href="https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF?si=Wd16LL8uT5yjdv5w8giLLw">
+                        <img src="https://m.media-amazon.com/images/I/51rttY7a+9L._h1_.png" alt="Logo Spotify">
+                    </a>
+                </div>
+            </div>
+        </footer>
 
     <script src="script.js"></script>
 </body>
